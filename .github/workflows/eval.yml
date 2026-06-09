@@ -23,7 +23,7 @@ jobs:
           pip install ruff
           # CPU torch wheel keeps the runner small/fast.
           pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cpu
-          pip install transformers==4.46.2 peft==0.13.2 datasets==3.1.0 accelerate==1.1.1
+          pip install transformers==4.46.2 peft==0.13.2 datasets==3.1.0 accelerate==1.1.1 sentencepiece==0.2.0 protobuf==5.28.3
 
       - name: Ruff lint
         run: ruff check src serving app
