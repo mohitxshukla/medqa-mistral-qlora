@@ -1,0 +1,19 @@
+services:
+  medqa-api:
+    build:
+      context: ..
+      dockerfile: serving/Dockerfile
+    image: medqa-mistral-api:local
+    ports:
+      - "8000:8000"
+    environment:
+      BASE_MODEL: mistralai/Mistral-7B-Instruct-v0.3
+      ADAPTER_REPO: "${ADAPTER_REPO:-mohitxshukla/medqa-mistral-7b-qlora}"
+      LOAD_4BIT: "0"          # CPU local; set 1 + a GPU runtime for 4-bit
+      MAX_NEW_TOKENS: "256"
+      HF_TOKEN: "${HF_TOKEN:-}"  # needed to pull the gated base model
+    volumes:
+      - hf-cache:/models       # persist downloaded weights between runs
+
+volumes:
+  hf-cache:

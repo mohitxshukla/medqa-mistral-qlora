@@ -1,0 +1,7 @@
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+ignore = ["E402"]  # late imports are intentional (sys.path shims, lazy heavy deps)

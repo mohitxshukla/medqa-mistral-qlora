@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Training artifacts / weights (push adapters to the Hub, not git)
+out/
+checkpoints/
+*.safetensors
+*.gguf
+wandb/
+
+# HF / model caches
+.cache/
+models/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+.ipynb_checkpoints/

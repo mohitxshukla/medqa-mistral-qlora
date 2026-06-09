@@ -1,0 +1,11 @@
+# Hugging Face Space (Gradio SDK) runtime deps.
+gradio==4.44.1
+transformers==4.46.2
+peft==0.13.2
+accelerate==1.1.1
+bitsandbytes==0.44.1
+torch==2.4.0
+huggingface_hub==0.26.2
+spaces==0.30.4          # ZeroGPU decorator (no-op off ZeroGPU)
+# CPU fallback backend (USE_GGUF=1):
+llama-cpp-python==0.3.2
